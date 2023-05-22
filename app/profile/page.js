@@ -17,7 +17,7 @@ const Page = () => {
 
   async function  fetchUserData () {
     if(searchParams.get('user')){
-    const res = await fetch(`${process.env.NEXT_PUBLIC_HOST}/api/getuser?user=${searchParams.get('user')}`);
+    const res = await fetch(`/api/getuser?user=${searchParams.get('user')}`);
     const newUser = await res.json();
     if(newUser.myuser){
       setUserData(newUser.myuser);

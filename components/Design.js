@@ -22,7 +22,7 @@ const Design = ({ method , data}) => {
   const submit =  async (e) =>{
     e.preventDefault();
     setLoading(true);
-    let req = await fetch(`${process.env.NEXT_PUBLIC_HOST}/api/blog?id=${data.id}`,{
+    let req = await fetch(`/api/blog?id=${data.id}`,{
       method : method,
       headers : {
         "Content-Type" : "application/json",

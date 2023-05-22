@@ -20,7 +20,7 @@ const Page = () => {
           },[]);
     
           async function fetchdata (id) {
-            let req = await fetch(`${process.env.NEXT_PUBLIC_HOST}/api/blog?id=${id}`,{
+            let req = await fetch(`/api/blog?id=${id}`,{
              method : "GET",
              headers :{
                "Content-Type" : "application/json",

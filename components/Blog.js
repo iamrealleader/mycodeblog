@@ -35,18 +35,18 @@ const Blog = () => {
 
     async function  fetchMoreData () {
     if (searchParams.get('searchquery')){
-      const res = await fetch(`${process.env.NEXT_PUBLIC_HOST}/api/blog?searchquery=${searchParams.get('searchquery')}&page=${page}`);
+      const res = await fetch(`/api/blog?searchquery=${searchParams.get('searchquery')}&page=${page}`);
       const newBlogs = await res.json();
       newBlogs && setBlogs(prevBlogs => [...prevBlogs, ...newBlogs]);
       setHasMore(newBlogs.length > 0);
     }
     else if (searchParams.get('user')){
-      const res = await fetch(`${process.env.NEXT_PUBLIC_HOST}/api/blog?user=${searchParams.get('user')}&page=${page}`);
+      const res = await fetch(`/api/blog?user=${searchParams.get('user')}&page=${page}`);
       const newBlogs = await res.json();
       newBlogs && setBlogs(prevBlogs => [...prevBlogs, ...newBlogs]);
       setHasMore(newBlogs.length > 0);
     } else if(catagory){
-      const res = await fetch(`${process.env.NEXT_PUBLIC_HOST}/api/blog?catagory=${catagory ? catagory : "all" }&page=${page}`);
+      const res = await fetch(`/api/blog?catagory=${catagory ? catagory : "all" }&page=${page}`);
       const newBlogs = await res.json();
       newBlogs && setBlogs(prevBlogs => [...prevBlogs, ...newBlogs]);
       setHasMore(newBlogs.length > 0);
@@ -57,7 +57,7 @@ const Blog = () => {
 
   const handleDelete = async (id) => {
     setLoading(true);
-    let req = await fetch(`${process.env.NEXT_PUBLIC_HOST}/api/blog?id=${id}`,{
+    let req = await fetch(`/api/blog?id=${id}`,{
      method : "DELETE",
      headers :{
        "Content-Type" : "application/json",
