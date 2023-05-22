@@ -2,14 +2,13 @@
 import {useState ,useEffect} from 'react'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import Head from 'next/head';
 import { useSession } from "next-auth/react";
 import { useRouter } from 'next/navigation';
+
 
 const Contact = () => {
     const router = useRouter();
     const {data : session} = useSession();
-    console.log(session?.user.email);
     const [loading,setLoading] = useState(false);
     const [mail,setMail] =useState({email : "" , subject : "" , message : ""});
 
@@ -59,12 +58,12 @@ const Contact = () => {
 
   return (
     <>
-    <Head>
+    {/* <head>
       <title>Contact Us - CodeBlog | Get in touch with our team</title>
       <meta name="description" content="Get in touch with the CodeBlog team. We're here to help with any questions or feedback you have about our platform or web development in general. Reach out to us today and join our growing community of web developers!" />
       <meta name="robots" content="index,follow" />
       <meta name="keywords" content="CodeBlog, web development, coding challenges, community-driven platform, contact us" />
-    </Head>
+    </head> */}
     <div className="bg-white dark:bg-gray-900 mt-10">
         <div className="py-8 lg:py-16 px-4 mx-auto max-w-screen-md">
           <h2 className="mb-4 text-4xl font-bold font-serif text-center text-gray-900 dark:text-white">Contact Us</h2>

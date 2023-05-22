@@ -12,7 +12,6 @@ import 'react-toastify/dist/ReactToastify.css';
 const Blog = () => {
 
   const { data: session, status } = useSession();
-  console.log(session?.user);
   const pathName = usePathname();
   const searchParams = useSearchParams();
   const router = useRouter();
@@ -27,7 +26,6 @@ const Blog = () => {
       setBlogs([]);
       setPage(1);
       setHasMore(true);
-      console.log("check");
       if(pathName === "/"){
         setCatagory("all");
       }else{
@@ -36,33 +34,21 @@ const Blog = () => {
   },[searchParams.get('catagory') , searchParams.get('searchquery') , searchParams.get('user')]);
 
     async function  fetchMoreData () {
-    // console.log(searchParams.get('catagory'));
-    // console.log(searchParams.get('searchquery'));
-    // console.log(searchParams.get('user'));
-    // console.log(catagory);
-    // console.log("hello");
-
     if (searchParams.get('searchquery')){
-      console.log(page);
       const res = await fetch(`${process.env.NEXT_PUBLIC_HOST}/api/blog?searchquery=${searchParams.get('searchquery')}&page=${page}`);
       const newBlogs = await res.json();
-      // console.log(newBlogs);
-      console.log(newBlogs.length);
-      setBlogs(prevBlogs => [...prevBlogs, ...newBlogs]);
+      newBlogs && setBlogs(prevBlogs => [...prevBlogs, ...newBlogs]);
       setHasMore(newBlogs.length > 0);
     }
     else if (searchParams.get('user')){
-      console.log(searchParams.get('user'));
       const res = await fetch(`${process.env.NEXT_PUBLIC_HOST}/api/blog?user=${searchParams.get('user')}&page=${page}`);
       const newBlogs = await res.json();
-      // console.log(newBlogs);
-      setBlogs(prevBlogs => [...prevBlogs, ...newBlogs]);
+      newBlogs && setBlogs(prevBlogs => [...prevBlogs, ...newBlogs]);
       setHasMore(newBlogs.length > 0);
     } else if(catagory){
       const res = await fetch(`${process.env.NEXT_PUBLIC_HOST}/api/blog?catagory=${catagory ? catagory : "all" }&page=${page}`);
       const newBlogs = await res.json();
-      console.log(newBlogs);
-      setBlogs(prevBlogs => [...prevBlogs, ...newBlogs]);
+      newBlogs && setBlogs(prevBlogs => [...prevBlogs, ...newBlogs]);
       setHasMore(newBlogs.length > 0);
       }
     setPage(page+1);
@@ -102,9 +88,34 @@ const Blog = () => {
       next={fetchMoreData}
       hasMore={hasMore}
       loader={
-      <div className='my-10 flex justify-center items-center'>
-        <Image src={"/images/loading.gif"} width={70} height={70} alt="loading..."></Image>
-      </div> }
+        <div className="p-5 w-[95vw] mx-auto flex justify-center flex-wrap gap-5 transition-transform">
+          {/* Create a loading skeleton for six blog items */}
+          {[...Array(6)].map((_, index) => (
+            <div key={index} className="prompt_card animate-pulse">
+              <div className="flex justify-between items-start gap-5">
+                <div className="flex-1 flex justify-start items-center gap-3 cursor-pointer">
+                  <div className="bg-gray-200 rounded-full w-12 h-12" />
+                  <div className="flex flex-col">
+                    <div className="bg-gray-200 h-5 w-28 mb-2" />
+                    <div className="bg-gray-200 h-4 w-36" />
+                  </div>
+                </div>
+              </div>
+              <div className="my-2">
+                <div className="bg-gray-200 h-8 w-full mb-3" />
+                <div className="bg-gray-200 h-6 w-5/6" />
+                <div className="bg-gray-200 h-6 w-4/5" />
+                <div className="bg-gray-200 h-6 w-5/6" />
+              </div>
+              <div className="my-2">
+                <div className="bg-gray-200 h-6 w-3/4" />
+              </div>
+            </div>
+          ))}
+        </div>
+      }
+      
+      
   >
     <div className="p-5 w-[95vw] mx-auto flex justify-center flex-wrap gap-5 transition-transform">
         {blogs && blogs.length > 0 && blogs.map((blog) => {

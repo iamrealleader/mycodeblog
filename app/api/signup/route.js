@@ -8,7 +8,6 @@ export async function POST(req) {
  try {
     await connectDb();
     const {name,email,password} = await req.json()
-    // console.log(name,email,password);
     
     if (!name && !email && !password) {
       return NextResponse.status(404).json({success : false , msg : "please fill the following inputs"});
@@ -16,11 +15,9 @@ export async function POST(req) {
     let encryptedPass = await bcrypt.hash(password,10);
     const match = await User.findOne({email});
     console.log(match);
-    console.log("ok1");
     if(match){
       return NextResponse.json({success : false , msg : "User with this Email Already Exists!"});
     }
-    console.log("ok1");
     const user = new User({name,email,password : encryptedPass}); 
     await user.save();
      

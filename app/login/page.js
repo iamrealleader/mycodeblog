@@ -5,12 +5,9 @@ import { useState , useContext } from 'react'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useRouter } from 'next/navigation';
-import Head from "next/head";
-import { useSession, signIn, signOut } from "next-auth/react"
-// import User from "../components/Context";
+import { signIn } from "next-auth/react"
 
 const Login = () => {
-  // const {login , setLogin} = useContext(User);
   const [login , setLogin] = useState(false);
   let [user,setUser] = useState({email:"" , password:""});
   let [loading,setLoading] = useState(false);
@@ -23,16 +20,7 @@ const change = (e) =>{
 const submitForm = async (e) =>{
     e.preventDefault();
     setLoading(true);
-    
-    // const res = await fetch(process.env.NEXT_PUBLIC_URL+'/Login', {
-    //   method: 'POST',
-    //   headers: {
-    //     'Accept': 'application/json',
-    //     'Content-Type': 'application/json'
-    //   },
-    //   body: JSON.stringify(user)
-    // });
-    // const data = await res.json();
+  
 
     const status = await signIn("credentials",{
       redirect : false,
@@ -48,8 +36,6 @@ const submitForm = async (e) =>{
       });
       
       setLogin(true);
-      // localStorage.setItem("token" , data.token);
-      // localStorage.setItem("user" ,data.email);
 
       setUser({email:"" , password:""});
         router.push('/?catagory=all');
@@ -64,12 +50,12 @@ const submitForm = async (e) =>{
 
   return (
     <>
-      <Head>
+      {/* <head>
       <title>Login - CodeBlog | Access your account and join the community</title>
       <meta name="description" content="Login to CodeBlog and access your account to join our community of web developers. Our platform offers a supportive environment for learning, sharing, and collaborating on web development projects, with access to tutorials, code snippets, and Q&A forums." />
       <meta name="robots" content="noindex,nofollow" />
       <meta name="keywords" content="CodeBlog, web development, login, account, community, tutorials, code snippets, Q&A forums" />
-    </Head>
+     </head> */}
 
         <div className="my-10 min-h-screen flex flex-col">
             <div className="container check max-w-sm mx-auto flex-1 flex flex-col items-center justify-center px-2">

@@ -12,7 +12,6 @@ export default function Home() {
   const handleSearch = async (e) =>{
     e.preventDefault();
     router.push(`/?searchquery=${search}#here`);
-    console.log("serach");
  }
   return (
       <>

@@ -9,16 +9,8 @@
 html{
   overflow-x: hidden;
   scroll-behavior: smooth;
-  /* scroll-padding-top: 50rem; */
-  /* scroll-margin-top: 50rem; */
 }
 
-/* #here {
-  overflow-x: hidden;
-  scroll-behavior: smooth;
-  scroll-padding-top: 150px;
-  scroll-margin-top: 150px;
-} */
 
 .main {
   width: 100vw;
@@ -81,6 +73,30 @@ html{
   .main {
     padding: 0;
   }
+}
+
+.loadingCenter{
+  position: fixed;
+  z-index: 9999;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 148px;
+  height: 148px;
+}
+
+/* Blur the background */
+.blurbg:after {
+  content: '';
+  background: rgba(0, 0, 0, 0.2);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 150vw;
+  height: 150vh;
+  transform: translate(-50% , -50%);
+  z-index: 98;
+  backdrop-filter: blur(2px);
 }
 
 .profile{

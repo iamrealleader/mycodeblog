@@ -17,7 +17,7 @@ function Navbar() {
   const [search, setSearch] = useState(false);
 
   const {data : session} = useSession();
-  console.log(session?.user);
+  // console.log(session?.user);
 
 
   const showDropdown = () =>{

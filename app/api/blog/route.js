@@ -50,9 +50,7 @@ export async function GET(req) {
       }else if (user && page){
         const skip = (page-1)*10
         const limit = (page)*10
-        console.log(user);
         blogs = await Blog.find({"email" : user}).skip(skip).limit(limit).sort({$natural : -1});
-        console.log(blogs);
        }
      else{
       return NextResponse.json({ success : false , msg : "internal Server error"});
@@ -119,7 +117,6 @@ export async function PATCH(req) {
 
     const { searchParams } = new URL(req.url);
     const id = searchParams.get('id');
-    console.log(id);
     const headersList = headers();
     const token = headersList.get('token');
     const {title,catagory,description} = await req.json();
@@ -141,7 +138,6 @@ export async function PATCH(req) {
      redirect(`${process.env.NEXT_PUBLIC_HOST}/login`);
     }
 } catch (error) {
-  // console.log(error);
      return NextResponse.json({ success : false , msg : "internal Server error"});
     
  }

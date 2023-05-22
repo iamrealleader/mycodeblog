@@ -5,21 +5,21 @@ import Navbar from '@components/Navbar'
 import '@styles/globals.css'
 import { SessionProvider } from 'next-auth/react'
 
-export const metadata = {
-  title: "CodeBlog | Latest articles and tutorials on web development",
-  description: 'Discover the latest articles and tutorials on web development from CodeBlog. Our community-driven platform offers a wealth of user-generated content on topics like HTML, CSS, JavaScript, and more, all designed to help you take your web development skills to the next level.',
-}
 
-export default function RootLayout({ children}) {
+export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <head>
+        <title>CodeBlog | Latest articles and tutorials on web development</title>
+        <meta name="description" content="Discover the latest articles and tutorials on web development from CodeBlog. Our community-driven platform offers a wealth of user-generated content on topics like HTML, CSS, JavaScript, and more, all designed to help you take your web development skills to the next level." />
+      </head>
       <body>
         <div className='main'>
             <div className='gradient' />
           </div>
-          <SessionProvider session={children.session}>
+          <SessionProvider>
             <Navbar/>
-            {children}
+              {children}
             <Footer/>
           </SessionProvider>
         </body>

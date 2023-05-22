@@ -27,7 +27,6 @@ const page = () => {
               }
             })
             let res = await req.json();
-            console.log(res[0]);
             setBlog({
                 id : res[0]._id,
                 catagory : res[0].catagory ,
@@ -37,9 +36,17 @@ const page = () => {
            }
 
   return (
-    <div>
-        <Design method={"PATCH"} data={blog} />
-    </div>
+    <>
+    {/* <head>
+      <title>Edit Blog - CodeBlog | Update your blog post and reach more readers</title>
+      <meta name="description" content="Edit your blog post on CodeBlog and update your content to reach more readers. Our platform offers a user-friendly editor and a supportive community of web developers, helping you improve your writing and coding skills and attract more readers to your blog." />
+      <meta name="robots" content="noindex,nofollow" />
+      <meta name="keywords" content="CodeBlog, web development, blog post, update your content, user-friendly editor, supportive community" />
+    </head> */}
+      <div>
+          <Design method={"PATCH"} data={blog} />
+      </div>
+    </>
   )
 }
 

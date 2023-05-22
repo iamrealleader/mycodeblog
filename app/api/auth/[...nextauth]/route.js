@@ -62,15 +62,11 @@ const handler = NextAuth({
       try {
         
         if(account.provider !== "credentials"){
-          console.log("ok1");
           await connectDb();
           const {name , email , image} = user;
           const myuser = await User.findOne({email});
           
           if(!myuser){ 
-            console.log("ok2");
-            console.log(image);
-            console.log(myuser);
             const data = new User({name,email, profileImage : image ,password : "null_password"}); 
 
             await data.save();

@@ -16,14 +16,9 @@ const page = () => {
     },[searchParams.get('user')])
 
   async function  fetchUserData () {
-    console.log("hello");
-    console.log(searchParams.get('user'));
-
     if(searchParams.get('user')){
     const res = await fetch(`${process.env.NEXT_PUBLIC_HOST}/api/getuser?user=${searchParams.get('user')}`);
     const newUser = await res.json();
-    console.log(newUser.myuser);
-    console.log(newUser);
     if(newUser.myuser){
       setUserData(newUser.myuser);
     }
@@ -32,6 +27,10 @@ const page = () => {
 
   return (
     <>
+      {/* <head>
+        <title>Codeblog | watch and see your profile and others profiles</title>
+        <meta name="description" content="Codeblog |you can visit your own profile an others profile" />
+      </head> */}
       <div className="profile">
       </div>
       <div className="rounded-lg w-[95vw] h-fit bg-white mt-72 mx-auto flex flex-col items-center">
@@ -41,8 +40,8 @@ const page = () => {
 
           }
           <div className=" my-5 content flex flex-col items-center">
-              <h1 className="text-5xl my-3 font-bold">{userData.name ? userData.name : "Unknown"}</h1>
-              <h2 className=" my-3 font-semibold ">{userData.email ? userData.email : "Unknow@gmail.com"}</h2>
+              <h1 className="text-5xl my-3 font-bold">{userData.name ? userData.name : "loading.."}</h1>
+              <h2 className=" my-3 font-semibold ">{userData.email ? userData.email : "loading.."}</h2>
               <div className="links flex my-2 gap-2 items-center transition-transform">
                 <Link href="/">
                   <svg viewBox="0 0 960 1000" fill="currentColor" height="1.8rem" width="1.8rem" className=" hover:scale-110 text-blue-500">

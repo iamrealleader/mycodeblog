@@ -3,12 +3,6 @@
 import {useEffect, useState} from 'react'
 import { useRouter } from 'next/navigation';
 import { useSession } from "next-auth/react";
-// import { Metadata } from 'next';
-
-// export const Metadata = {
-//   title: "CodeBlog | Latest articles and tutorials on web development",
-//   description: 'Discover the latest articles and tutorials on web development from CodeBlog. Our community-driven platform offers a wealth of user-generated content on topics like HTML, CSS, JavaScript, and more, all designed to help you take your web development skills to the next level.',
-// }
 
 const Createblog = ({ method , data}) => {
   const router = useRouter();
@@ -28,7 +22,6 @@ const Createblog = ({ method , data}) => {
   const submit =  async (e) =>{
     e.preventDefault();
     setLoading(true);
-    // console.log(data._id);
     let req = await fetch(`${process.env.NEXT_PUBLIC_HOST}/api/blog?id=${data.id}`,{
       method : method,
       headers : {
@@ -39,7 +32,6 @@ const Createblog = ({ method , data}) => {
     })
 
     let res = await req.json();
-    // console.log(res);
     setLoading(false);
 
     if(res.success){
@@ -67,12 +59,6 @@ const Createblog = ({ method , data}) => {
 
   return (
     <>
-    {/* <Head>
-      <title>Create Blog - CodeBlog | Share your expertise with the community</title>
-      <meta name="description" content="Create a blog post on CodeBlog and share your expertise with the community. Our plathtmlForm offers a user-friendly editor and a supportive community of web developers, helping you reach a wider audience and gain valuable feedback on your writing and coding skills." />
-      <meta name="robots" content="noindex,nofollow" />
-      <meta name="keywords" content="CodeBlog, web development, blog post, share your expertise, user-friendly editor, supportive community" />
-    </Head> */}
     <div className="container mx-auto pt-16 backdrop-blur-sm">
         <form onSubmit={submit} className="w-[90vw] mx-auto">
           <div className="space-y-12">

@@ -5,12 +5,9 @@ import { useState , useContext } from 'react'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useRouter } from 'next/navigation';
-import Head from "next/head";
-// import User from "../components/Context";
 
 
 const Signup = () => {
-    // const {login , setLogin} = useContext(User);
     const [login , setLogin] = useState(false);
     let [user,setUser] = useState({name:"", email:"" , password:""}); 
     let [loading,setLoading] = useState(false);
@@ -39,8 +36,6 @@ const Signup = () => {
       });
 
       setLogin(true);
-    //   localStorage.setItem("token" , data.token);
-    //   localStorage.setItem("user" ,data.email);
       setUser({name : "" ,email:"" , password:""});
         router.push('/login');
     }
@@ -53,12 +48,12 @@ const Signup = () => {
 
   return (
     <>
-        <Head>
+        {/* <head>
         <title>Signup - CodeBlog | Join our community of web developers</title>
         <meta name="description" content="Signup for CodeBlog and join our community of web developers. Our platform offers a supportive environment for learning, sharing, and collaborating on web development projects, with access to tutorials, code snippets, and Q&A forums." />
         <meta name="robots" content="noindex,nofollow" />
         <meta name="keywords" content="CodeBlog, web development, signup, community, tutorials, code snippets, Q&A forums" />
-        </Head>
+        </head> */}
 
         <div className="my-10 bg-grey-lighter min-h-screen flex flex-col">
             <div className="container max-w-sm mx-auto flex-1 flex flex-col items-center justify-center px-2">

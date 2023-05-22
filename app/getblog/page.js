@@ -6,7 +6,6 @@ import Image from 'next/image';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import moment from "moment"
-import Head from 'next/head';
 import { useSession } from "next-auth/react";
 import { useSearchParams  } from "next/navigation";
 
@@ -15,8 +14,6 @@ const GetBlog = () => {
     const searchParams = useSearchParams();
     const {data : session} = useSession();
     const id = searchParams.get('id');
-    // console.log(session?.user);
-    console.log(id);
 
    let [blog,setBlog] = useState({}); 
    let [loading,setLoading] = useState(false);
@@ -33,7 +30,6 @@ const GetBlog = () => {
           }
         })
         let res = await req.json();
-        console.log(res[0]);
         setBlog(res[0]);
        }
 
@@ -67,12 +63,12 @@ const GetBlog = () => {
 
   return (
     <>
-    <Head>
+    {/* <head>
       <title>{blog.title}</title>
       <meta name="description" content={blog.description} />
       <meta name="robots" content="index,follow" />
       <meta name="keywords" content="CodeBlog, web development, login, account, community, tutorials, code snippets, Q&A forums" />
-    </Head>
+    </head> */}
     {
       blog && <div className="container w-[95vw] mx-auto pt-20">
       <div className='flex justify-between items-center'>

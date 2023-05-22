@@ -1,16 +1,13 @@
-import React from 'react'
 import Link from 'next/link'
-import Head from 'next/head'
+ 
+export const metadata = {
+  title: 'About - CodeBlog | Expert solutions for web developers',
+  description: "Codeblog provides step-by-step solutions to common web development problems. Learn how to solve issues in frontend technologies like HTML, CSS, JavaScript, and React, as well as backend technologies like the MERN stack."
+};
 
 const About = () => {
   return (
       <>
-      <Head>
-        <title>About - CodeBlog | Expert solutions for web developers</title>
-        <meta name="description" content="Codeblog provides step-by-step solutions to common web development problems. Learn how to solve issues in frontend technologies like HTML, CSS, JavaScript, and React, as well as backend technologies like the MERN stack."/>
-        <meta name="robots" content="index,follow" />
-        <meta name="keywords" content="CodeBlog, web development, coding challenges, community-driven platform" />
-     </Head>
     <div className='mx-5 mt-16 backdrop-blur-sm'>
         <div className='about'>
           <div className="flex flex-col-reverse md:flex-row justify-center items-center">
