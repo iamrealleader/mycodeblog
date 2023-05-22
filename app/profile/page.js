@@ -7,7 +7,7 @@ import { useSearchParams } from "next/navigation";
 import Link from "next/link";
 
 
-const page = () => {
+const Page = () => {
   const [ userData , setUserData ] = useState({name : "" , email : ""});
   const searchParams = useSearchParams();
 
@@ -78,4 +78,4 @@ const page = () => {
   )
 }
 
-export default page
+export default Page

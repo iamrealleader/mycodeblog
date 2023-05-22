@@ -3,7 +3,7 @@ import Design from "@components/Design"
 import { useState , useEffect } from "react"
 import { useSearchParams  } from "next/navigation";
 
-const page = () => {
+const Page = () => {
 
     const searchParams = useSearchParams();
     const id = searchParams.get('id');
@@ -50,4 +50,4 @@ const page = () => {
   )
 }
 
-export default page
+export default Page

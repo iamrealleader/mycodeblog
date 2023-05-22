@@ -4,7 +4,7 @@ import {useEffect, useState} from 'react'
 import { useRouter } from 'next/navigation';
 import { useSession } from "next-auth/react";
 
-const Createblog = ({ method , data}) => {
+const Design = ({ method , data}) => {
   const router = useRouter();
   const [blogData, setBlogData] = useState({
     id : "",
@@ -126,5 +126,5 @@ const Createblog = ({ method , data}) => {
   )
 }
 
-export default Createblog
+export default Design
 

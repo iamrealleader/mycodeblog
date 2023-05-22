@@ -1,6 +1,6 @@
 import Image from "next/image"
 
-const loading = () => {
+const Loading = () => {
   return (
     <div className="blurbg loadingCenter">
       <Image priority src='/images/loading.gif' width={50} height={50} alt="Loading..."></Image>
@@ -8,4 +8,4 @@ const loading = () => {
   )
 }
 
-export default loading
+export default Loading

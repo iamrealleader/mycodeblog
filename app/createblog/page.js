@@ -2,7 +2,7 @@
 import Design from "@components/Design"
 import { useState } from "react"
 
-const page = () => {
+const Page = () => {
     const [data,setData] = useState({
         catagorie : "all",
         title : "",
@@ -24,4 +24,4 @@ const page = () => {
   )
 }
 
-export default page
+export default Page
