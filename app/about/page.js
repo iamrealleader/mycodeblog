@@ -2,7 +2,7 @@ import Link from 'next/link'
  
 export const metadata = {
   title: 'About - CodeBlog | Expert solutions for web developers',
-  description: "Codeblog provides step-by-step solutions to common web development problems. Learn how to solve issues in frontend technologies like HTML, CSS, JavaScript, and React, as well as backend technologies like the MERN stack."
+  description: "Codeblog provides ste-by-step solutions to common web development problems. Learn how to solve issues in frontend technologies like HTML, CSS, JavaScript, and React, as well as backend technologies like the MERN stack."
 };
 
 const About = () => {
@@ -13,7 +13,7 @@ const About = () => {
           <div className="flex flex-col-reverse md:flex-row justify-center items-center">
             <div className="aboutContent mx-2 md:mx-5">
               <h1 className='text-3xl md:text-5xl font-bold my-2'>About us</h1>
-              <p>CodeBlog is the ultimate resource for web developers seeking expert guidance and practical solutions to common coding challenges. Our community-powered platform features a vast library of user-generated content, including detailed tutorials, code snippets, and Q&A forums, all aimed at helping developers overcome the toughest obstacles in web development. Whether you're a beginner or an experienced pro, CodeBlog is the go-to destination for finding solutions to complex coding problems. Join our community and take your web development skills to the next level today!</p>
+              <p>CodeBlog is the ultimate resource for web developers seeking expert guidance and practical solutions to common coding challenges. Our community-powered platform features a vast library of user-generated content, including detailed tutorials, code snippets, and Q&A forums, all aimed at helping developers overcome the toughest obstacles in web development. Whether you are a beginner or an experienced pro, CodeBlog is the go-to destination for finding solutions to complex coding problems. Join our community and take your web development skills to the next level today!</p>
               <Link href='/contact'><button className="py-1 px-3 rounded-lg my-3 mx-1 text-lg font-bold  bg-green-500 text-white hover:bg-green-400">Contact us</button></Link>
               <div className="links flex my-2 gap-2 items-center transition-transform">
                 <Link href="/">
@@ -52,10 +52,10 @@ const About = () => {
               Welcome to our blog! We have an amazing front-end developer who specializes in creating static websites. By leveraging the power of HTML, CSS, SCSS, JavaScript, and React, we ensure that your website is not only visually appealing but also performs exceptionally well. This means faster load times and a seamless user experience.
             </p>
             <p className="mt-2 px-4 py-2">
-              Our commitment to you goes beyond just design and development. We want to provide you with the best value possible. That's why we offer free HTTPS certificates, ensuring that your website is secure and protected. Additionally, we provide free website deployment services, so you don't have to worry about the technical aspects of getting your site live. We'll take care of it for you!
+              Our commitment to you goes beyond just design and development. We want to provide you with the best value possible. That is why we offer free HTTPS certificates, ensuring that your website is secure and protected. Additionally, we provide free website deployment services, so you don't have to worry about the technical aspects of getting your site live. We all take care of it for you!
             </p>
             <p className="mt-2 px-4 py-2">
-              And that's not all! We also offer free error fixing for your website. If you encounter any issues or bugs, we'll be there to help you out. Our goal is to make sure you have a smooth and hassle-free experience with your website.
+              And that is not all! We also offer free error fixing for your website. If you encounter any issues or bugs, we all be there to help you out. Our goal is to make sure you have a smooth and hassle-free experience with your website.
             </p>
         </div>
 
@@ -63,25 +63,25 @@ const About = () => {
           <details className="mb-4 select-none">
             <summary className="font-bold rounded-lg cursor-pointer bg-gray-50 px-4 py-4 border-t border-b border-gray-100">What kind of problems can Codeblog solve?</summary>
             <p className="mt-2 px-4 py-2">
-              Codeblog can help you solve a wide range of problems related to web development. Whether you're having issues with frontend technologies like HTML, CSS, or JavaScript, or you're working on a project using the MERN stack, we have solutions that can help.
+              Codeblog can help you solve a wide range of problems related to web development. Whether you are having issues with frontend technologies like HTML, CSS, or JavaScript, or you are working on a project using the MERN stack, we have solutions that can help.
 
               Our blog covers topics such as responsive web design, performance optimization, database management, authentication, and more. We provide tutorials, guides, and code examples to assist you in overcoming common challenges in web development. By exploring our articles, you can gain insights and best practices to enhance your coding skills and build high-quality web applications.
             </p>
           </details>
 
           <details className="mb-4 select-none">
-            <summary className="font-bold rounded-lg cursor-pointer bg-gray-50 px-4 py-4 border-t border-b border-gray-100">How can I optimize my website's performance?</summary>
+            <summary className="font-bold rounded-lg cursor-pointer bg-gray-50 px-4 py-4 border-t border-b border-gray-100">How can I optimize my website is performance?</summary>
             <p className="mt-2 px-4 py-2">
-              Optimizing website performance involves various techniques that can greatly impact the user experience. It includes tasks such as minifying and compressing assets, optimizing images, implementing caching mechanisms, optimizing code, and utilizing content delivery networks (CDNs) to distribute your website's assets efficiently.
+              Optimizing website performance involves various techniques that can greatly impact the user experience. It includes tasks such as minifying and compressing assets, optimizing images, implementing caching mechanisms, optimizing code, and utilizing content delivery networks (CDNs) to distribute your website is assets efficiently.
 
-              Our blog provides comprehensive guides and tips to help you optimize your website's performance. We delve into topics such as leveraging browser caching, reducing HTTP requests, improving server response time, and optimizing JavaScript and CSS files. By following our recommendations, you can significantly enhance your website's speed, responsiveness, and overall performance.
+              Our blog provides comprehensive guides and tips to help you optimize your website is performance. We delve into topics such as leveraging browser caching, reducing HTTP requests, improving server response time, and optimizing JavaScript and CSS files. By following our recommendations, you can significantly enhance your website is speed, responsiveness, and overall performance.
             </p>
           </details>
 
           <details className="mb-4 select-none">
             <summary className="font-bold rounded-lg cursor-pointer bg-gray-50 px-4 py-4 border-t border-b border-gray-100">What are the best practices for responsive web design?</summary>
             <p className="mt-2 px-4 py-2">
-              Responsive web design is crucial in today's mobile-dominated world. It involves creating websites that adapt and respond effectively to different screen sizes and devices. To achieve responsive design, it's essential to follow industry best practices.
+              Responsive web design is crucial in today is mobile-dominated world. It involves creating websites that adapt and respond effectively to different screen sizes and devices. To achieve responsive design, it is essential to follow industry best practices.
 
               At Codeblog, we share the best practices for responsive web design. Our articles cover topics such as using fluid layouts that adjust to different screen widths, employing media queries to target specific devices, adopting a mobile-first approach to prioritize mobile experience, and conducting thorough testing across multiple devices and browsers. By implementing these practices, you can ensure your website delivers a seamless and engaging user experience across various devices.
             </p>
