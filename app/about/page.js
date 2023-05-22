@@ -52,7 +52,7 @@ const About = () => {
               Welcome to our blog! We have an amazing front-end developer who specializes in creating static websites. By leveraging the power of HTML, CSS, SCSS, JavaScript, and React, we ensure that your website is not only visually appealing but also performs exceptionally well. This means faster load times and a seamless user experience.
             </p>
             <p className="mt-2 px-4 py-2">
-              Our commitment to you goes beyond just design and development. We want to provide you with the best value possible. That is why we offer free HTTPS certificates, ensuring that your website is secure and protected. Additionally, we provide free website deployment services, so you don't have to worry about the technical aspects of getting your site live. We all take care of it for you!
+              Our commitment to you goes beyond just design and development. We want to provide you with the best value possible. That is why we offer free HTTPS certificates, ensuring that your website is secure and protected. Additionally, we provide free website deployment services, so you do not have to worry about the technical aspects of getting your site live. We all take care of it for you!
             </p>
             <p className="mt-2 px-4 py-2">
               And that is not all! We also offer free error fixing for your website. If you encounter any issues or bugs, we all be there to help you out. Our goal is to make sure you have a smooth and hassle-free experience with your website.
